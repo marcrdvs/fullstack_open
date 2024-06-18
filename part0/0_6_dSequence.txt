@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser-server POST httpsstudies.cs.helsinki.fiexampleappnew_note_spa
+    Note right of browser browser sends  header with Content-Type applicationjson
+    Note right of browser browser sends PAYLOAD {contentfullstack open test,date2024-05-29T054657.373Z}
+    
+    activate server
+    server--browser 201 Created status code
+    Note left of server server sends {messagenote created}
+    deactivate server
+
+    Note right of browser browser redraw notes
+    Note right of browser in this case, the page, JS and CSS files are not resubmitted
+
+
+
